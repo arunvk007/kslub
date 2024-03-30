@@ -88,7 +88,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 url: n,
-                headers: { Authorization: "aTZsTAUzX5PYuQFrm27twPxHwLdhNbEIcQms-SORUaVpVZvx5sXQmmHjuNxxnrAhzzAsnyeUAJukJEBt1ZFFbw==" },  // Replace with your actual InfluxDB token
+                headers: { Authorization: "" },  // Replace with your actual InfluxDB token
                 data: { deveui: t },
                 success: function (t) {
                     console.log(t); // Log the response to the console
