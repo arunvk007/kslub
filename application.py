@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request, render_template
 
 format = "%Y-%m-%d , %I:%M:%S %p"
 # key = "...."
-key = "aTZsTAUzX5PYuQFrm27twPxHwLdhNbEIcQms-SORUaVpVZvx5sXQmmHjuNxxnrAhzzAsnyeUAJukJEBt1ZFFbw=="
+key = ""
 app = Flask(__name__)
 
 name = {
@@ -31,7 +31,7 @@ def fetchdata():
     if auth == key and dev_eui:
         main = {}
         try:
-            with InfluxDBClient(url="http://103.119.179.2:8086", token="aTZsTAUzX5PYuQFrm27twPxHwLdhNbEIcQms-SORUaVpVZvx5sXQmmHjuNxxnrAhzzAsnyeUAJukJEBt1ZFFbw==", org="icfoss") as client:
+            with InfluxDBClient(url="http://103.119.179.2:8086", token="", org="icfoss") as client:
                 query = f'from(bucket: "AWSdb") |> range(start: -30m) |> filter(fn: (r) => r.dev_eui == "{dev_eui}")'
                 result = client.query_api().query(org="icfoss", query=query)
 
